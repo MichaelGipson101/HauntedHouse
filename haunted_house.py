@@ -25,6 +25,9 @@ def floor1_fight():
         USER_LIFE_POINTS += health_potion
         print("You recover ", health_potion, " life points.")
         print("Your life point total is now ", USER_LIFE_POINTS, ".")
+        print(
+            "You notice a hidden staircase behind a large painting within the room you are in. You proceed to the next floor.")
+        enter_floor2()
     elif response == "no":
         print("You ignore the shiny chest in front of you and proceed to the next floor.")
         enter_floor2()
@@ -51,9 +54,11 @@ def floor2_fight():
         USER_LIFE_POINTS += health_potion
         print("You recover ", health_potion, " life points.")
         print("Your life point total is now ", USER_LIFE_POINTS, ".")
-    elif response == "no":
-        print("You ignore the shiny chest in front of you and proceed to the next floor.")
+        print("You enter the hallway again, noting that the scratching seems to have stopped. At least for now.")
         enter_floor3()
+    elif response == "no":
+        print("You ignore the shiny chest in front of you and find yourself back in the hall from which you came.")
+        enter_floor2()
 
 
 def enter_floor1_left():
@@ -87,6 +92,29 @@ def enter_floor2_right():
         enter_floor2()
 
 
+def floor2_continue():
+    print("The scratching is almost deafening at this point. Will you keep going, or will you hide?")
+    response = input(
+        "You see a door on your left that may offer you a hiding place. (Type proceed or hide)")
+    while True:
+        if response == "proceed" or response == "hide":
+            break
+        else:
+            print("Time passes as you ponder your decision.")
+            response = input("You see a door on your left that may offer you a hiding place. (Type proceed or hide)")
+            break
+
+    if response == "proceed":
+        print(
+            "You press deeper into the darkness, the scratching becoming unbearable as you panic, trying to figure out where the noise is coming from.")
+        floor2_death()
+    if response == "hide":
+        print(
+            "You struggle to stay quiet as your heart beats in your chest. The scratching noise moves down the hallway, passing by the room you are in. \n"
+            "You catch a glimpse of the hideous monster you almost fell victim to, sending a shiver down your spine. \nYou wait until the noise subsides and continue deeper into the house.")
+        enter_floor3()
+
+
 def enter_floor2():
     print("You enter a long hallway, lights flickering dimly throughout the long hall. "
           "\n You hear a slow, methodical scraping noise from the darkness at the end of the hall.")
@@ -102,12 +130,17 @@ def enter_floor2():
 
     if response == "proceed":
         print("You press deeper into the darkness, the scratching becoming clearer and clearer the farther you go.")
-        floor2_death()
+        floor2_continue()
     if response == "right":
         enter_floor2_right()
 
 
 def enter_floor1_right():
+    global USER_LIFE_POINTS
+    print(
+        "You open the large wooden door to your right. You make your way up the broken staircase, wincing as you step on a nail. You lose 3 life points.")
+    USER_LIFE_POINTS -= 3
+    print("Your life point total is now ", USER_LIFE_POINTS, ".")
     enter_floor2()
 
 
