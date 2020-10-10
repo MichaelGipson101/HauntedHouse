@@ -65,7 +65,53 @@ def floor1_fight():
         print("You ignore the shiny chest in front of you and proceed to the next floor.")
         enter_floor2()
 
+   def final_fight():
+    victory()
+    game_over()
+          
+          
+  
+   def enter_final_floor():
+    pass       
+          
+          
+          
+  def enter_floor9():
+    pass        
+          
+          
+          
+  def enter_floor8():
+    pass        
+          
+          
 
+   def enter_floor7():
+    pass       
+          
+          
+          
+  def enter_floor6():
+    pass        
+          
+          
+ def enter_floor5():
+    pass         
+          
+          
+          
+def enter_floor4():
+    pass          
+
+          
+def floor_3_left():
+    pass
+          
+ 
+def floor_3_forward():
+    pass
+          
+          
 def enter_floor3():
     pass
 
