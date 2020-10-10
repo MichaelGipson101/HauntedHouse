@@ -5,7 +5,15 @@ health_potion = random.randint(1, 5)
 
 
 def game_over():
+    global USER_LIFE_POINTS
     print("You have died. Better luck in the afterlife!")
+    response = input("Would you like to play again? (Type yes or no)?")
+    if response == "yes":
+        USER_LIFE_POINTS = 20
+        enter_the_house()
+    elif response == "no":
+        print("Thank you for playing!")
+
 
 
 def floor1_fight():
@@ -13,7 +21,7 @@ def floor1_fight():
     print("You are attacked by a crowd of Ghosts.")
     number_of_ghosts = random.randint(1, 5)
     for i in range(number_of_ghosts):
-        print("Ghost number ", i, " attacked us!")
+        print("Ghost number ", i, " attacks!")
         USER_LIFE_POINTS -= 1
     print("Life points have been reduced to ", USER_LIFE_POINTS)
     if USER_LIFE_POINTS <= 0:
@@ -42,7 +50,7 @@ def floor2_fight():
     print("You are attacked by a crowd of Ghosts.")
     number_of_ghosts = random.randint(1, 5)
     for i in range(number_of_ghosts):
-        print("Ghost number ", i, " attacked us!")
+        print("Ghost number ", i, " attacks!")
         USER_LIFE_POINTS -= 1
     print("Life points have been reduced to ", USER_LIFE_POINTS)
     if USER_LIFE_POINTS <= 0:
