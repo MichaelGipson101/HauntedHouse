@@ -19,7 +19,7 @@ global USER_LIFE_POINTS
 def victory():
     global USER_LIFE_POINTS
     print("You fall for what seems like hours, falling from the 10th floor all the way down to the ground. \nYou groan in pain as the grass beneath you cushions your fall.
-          \n You look back up at the house above, a pair of beady red eyes peering back from the window you just fell from. \nYou wince as a stinging pain engulfs your abdomen.
+          \n You look back up at the house above, a pair of beady red eyes peering back from the window you just fell from. \nYou wince as a stinging pain engulfs your abdomen.")
     USER_LIFE_POINTS -= 7
     if USER_LIFE_POINTS <= 0
           game_over():
