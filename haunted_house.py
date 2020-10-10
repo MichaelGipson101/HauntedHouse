@@ -4,6 +4,31 @@ USER_LIFE_POINTS = 20
 health_potion = random.randint(1, 5)
 
 
+
+def play_again():
+global USER_LIFE_POINTS
+    print("You have survived your night in the Haunted House. Congratulations on living to tell the tale!")
+    response = input("Would you like to play again? (Type yes or no)?")
+    if response == "yes":
+        USER_LIFE_POINTS = 20
+        enter_the_house()
+    elif response == "no":
+        print("Thank you for playing!")
+
+
+def victory():
+    global USER_LIFE_POINTS
+    print("You fall for what seems like hours, falling from the 10th floor all the way down to the ground. \nYou groan in pain as the grass beneath you cushions your fall.
+          \n You look back up at the house above, a pair of beady red eyes peering back from the window you just fell from. \nYou wince as a stinging pain engulfs your abdomen.
+    USER_LIFE_POINTS -= 7
+    if USER_LIFE_POINTS <= 0
+          game_over():
+    elif USER_LIFE_POINTS > 0
+          print("The pain is a temporary feeling, as the adrenaline pumping through your veins gets you to your feet - and far away from the house you just escaped.")
+          play_again():
+    
+
+
 def game_over():
     global USER_LIFE_POINTS
     print("You have died. Better luck in the afterlife!")
