@@ -4,31 +4,6 @@ USER_LIFE_POINTS = 20
 health_potion = random.randint(1, 5)
 
 
-
-def play_again():
-global USER_LIFE_POINTS
-    print("You have survived your night in the Haunted House. Congratulations on living to tell the tale!")
-    response = input("Would you like to play again? (Type yes or no)?")
-    if response == "yes":
-        USER_LIFE_POINTS = 20
-        enter_the_house()
-    elif response == "no":
-        print("Thank you for playing!")
-
-
-def victory():
-    global USER_LIFE_POINTS
-    print("You fall for what seems like hours, falling from the 10th floor all the way down to the ground. \nYou groan in pain as the grass beneath you cushions your fall.
-          \n You look back up at the house above, a pair of beady red eyes peering back from the window you just fell from. \nYou wince as a stinging pain engulfs your abdomen.")
-    USER_LIFE_POINTS -= 7
-    if USER_LIFE_POINTS <= 0
-          game_over():
-    elif USER_LIFE_POINTS > 0
-          print("The pain is a temporary feeling, as the adrenaline pumping through your veins gets you to your feet - and far away from the house you just escaped.")
-          play_again():
-    
-
-
 def game_over():
     global USER_LIFE_POINTS
     print("You have died. Better luck in the afterlife!")
@@ -38,7 +13,6 @@ def game_over():
         enter_the_house()
     elif response == "no":
         print("Thank you for playing!")
-
 
 
 def floor1_fight():
@@ -59,59 +33,55 @@ def floor1_fight():
         print("You recover ", health_potion, " life points.")
         print("Your life point total is now ", USER_LIFE_POINTS, ".")
         print(
-            "You notice a hidden staircase behind a large painting within the room you are in. You proceed to the next floor.")
+            "You notice a hidden staircase behind a large painting within the room you are in. You proceed to the "
+            "next floor.")
         enter_floor2()
     elif response == "no":
         print("You ignore the shiny chest in front of you and proceed to the next floor.")
         enter_floor2()
 
-   def final_fight():
+
+def final_fight():
     victory()
     game_over()
-          
-          
-  
-   def enter_final_floor():
-    pass       
-          
-          
-          
-  def enter_floor9():
-    pass        
-          
-          
-          
-  def enter_floor8():
-    pass        
-          
-          
 
-   def enter_floor7():
-    pass       
-          
-          
-          
-  def enter_floor6():
-    pass        
-          
-          
- def enter_floor5():
-    pass         
-          
-          
-          
+
+def enter_final_floor():
+    pass
+
+
+def enter_floor9():
+    pass
+
+
+def enter_floor8():
+    pass
+
+
+def enter_floor7():
+    pass
+
+
+def enter_floor6():
+    pass
+
+
+def enter_floor5():
+    pass
+
+
 def enter_floor4():
-    pass          
+    pass
 
-          
+
 def floor_3_left():
     pass
-          
- 
+
+
 def floor_3_forward():
     pass
-          
-          
+
+
 def enter_floor3():
     pass
 
@@ -153,7 +123,8 @@ def enter_floor1_left():
 def floor2_death():
     global USER_LIFE_POINTS
     print("As you find yourself lost in the darkness, you begin to notice heavy breathing behind you. \n"
-          "Your heart rate slows to a crawl as you find yourself unable to turn around. You lose consciousness as long, thin fingers wrap themselves around your neck. \n"
+          "Your heart rate slows to a crawl as you find yourself unable to turn around. You lose consciousness as "
+          "long, thin fingers wrap themselves around your neck. \n "
           "You find yourself within a dream that you will never wake up from.")
     USER_LIFE_POINTS -= 500
 
@@ -163,7 +134,8 @@ def floor2_death():
 
 def enter_floor2_right():
     response = input(
-        "You encounter a group of Ghosts huddled around a small table. Will you Fight or Run Away? (Type fight or run away)")
+        "You encounter a group of Ghosts huddled around a small table. Will you Fight or Run Away? (Type fight or run "
+        "away)")
     if response == "fight":
         floor2_fight()
     elif response == "run away":
@@ -185,12 +157,15 @@ def floor2_continue():
 
     if response == "proceed":
         print(
-            "You press deeper into the darkness, the scratching becoming unbearable as you panic, trying to figure out where the noise is coming from.")
+            "You press deeper into the darkness, the scratching becoming unbearable as you panic, trying to figure "
+            "out where the noise is coming from.")
         floor2_death()
     if response == "hide":
         print(
-            "You struggle to stay quiet as your heart beats in your chest. The scratching noise moves down the hallway, passing by the room you are in. \n"
-            "You catch a glimpse of the hideous monster you almost fell victim to, sending a shiver down your spine. \nYou wait until the noise subsides and continue deeper into the house.")
+            "You struggle to stay quiet as your heart beats in your chest. The scratching noise moves down the "
+            "hallway, passing by the room you are in. \n "
+            "You catch a glimpse of the hideous monster you almost fell victim to, sending a shiver down your spine. "
+            "\nYou wait until the noise subsides and continue deeper into the house.")
         enter_floor3()
 
 
@@ -217,7 +192,8 @@ def enter_floor2():
 def enter_floor1_right():
     global USER_LIFE_POINTS
     print(
-        "You open the large wooden door to your right. You make your way up the broken staircase, wincing as you step on a nail. You lose 3 life points.")
+        "You open the large wooden door to your right. You make your way up the broken staircase, wincing as you step "
+        "on a nail. You lose 3 life points.")
     USER_LIFE_POINTS -= 3
     print("Your life point total is now ", USER_LIFE_POINTS, ".")
     enter_floor2()
@@ -226,19 +202,48 @@ def enter_floor1_right():
 def enter_the_house():
     print("You approach a Haunted House. The night creeps up upon you as you enter.")
     response = input(
-        "Once inside, you see two doors. One to the left, and one to your right. Which one will you open? (Type right or left)")
+        "Once inside, you see two doors. One to the left, and one to your right. Which one will you open? (Type right "
+        "or left)")
     while True:
         if response == "left" or response == "right":
             break
         else:
             print("Time passes as you ponder your decision.")
             response = input(
-                "Two doors remain on your left and your right as rain begins to fall outside. Which will you choose? (Type right or left)")
+                "Two doors remain on your left and your right as rain begins to fall outside. Which will you choose? "
+                "(Type right or left)")
             break
     if response == "left":
         enter_floor1_left()
     if response == "right":
         enter_floor1_right()
+
+
+def play_again():
+    global USER_LIFE_POINTS
+    print("You have survived your night in the Haunted House. Congratulations on living to tell the tale!")
+    response = input("Would you like to play again? (Type yes or no)?")
+    if response == "yes":
+        USER_LIFE_POINTS = 20
+        enter_the_house()
+    elif response == "no":
+        print("Thank you for playing!")
+
+
+def victory():
+    global USER_LIFE_POINTS
+    print("You fall for what seems like hours, falling from the 10th floor all the way down to the ground. \nYou "
+          "groan in pain as the grass beneath you cushions your fall.")
+    print("\n You look back up at the house above, a pair of beady red eyes peering back from the window you just "
+          "fell from. \nYou wince as a stinging pain engulfs your abdomen.")
+    USER_LIFE_POINTS -= 7
+
+    if USER_LIFE_POINTS <= 0:
+        game_over()
+    else:
+        print("The pain is a temporary feeling, as the adrenaline pumping through your veins gets you to your feet - "
+              "and far away from the house you just escaped.")
+        play_again()
 
 
 def run():
