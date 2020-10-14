@@ -113,16 +113,128 @@ def enter_floor7():
     pass
 
 
-def enter_floor6():
-    pass
+def floor_4():
+    response = input(
+        "You see two doors, one door becomes red, the other becomes blue. Pick the door you want to run too")
+    while True:
+
+        if response == "red" or response == "blue":
+            break
+        else:
+            print("Select the valid door!")
+            response = input(
+                "You see two doors, one door becomes red, the other becomes blue. Pick the door you want to run too")
+    if response == "red":
+        enter_red_room()
+    if response == "blue":
+        enter_blue_room()
 
 
-def enter_floor5():
-    pass
+def enter_red_room():
+    response = input(
+        "You open the red door and see giant bats flying towards you, would you like to close the door or fight the bats?")
+    while True:
+        if response == "close" or response == "fight":
+            break
+        else:
+            print(" Hey make sure to select either close or fight!")
+            response = input(
+                "You open the red door and see giant bats flying towards you, would you like to close the door or fight the bats?")
+            break
+    if response == "close":
+        print(
+            "you closed the door and stepped back, you realized you are trapped in this house and you will have to escape")
+        floor_4()
+    if response == "fight":
+        attack_bats()
 
 
-def enter_floor4():
-    pass
+def attack_bats():
+    print(" you pull out your sword and attack the bats, luckily you have armor so the bats did no damage to you")
+    response = input(" you see that there is a mega bat that is flying towards you, do you want to fight or runaway?")
+    while True:
+        if response == "runaway" or response == "fight":
+            break
+        else:
+            print("invalid answer try again")
+            response = input(
+                "you see that there is a mega bat that is flying towards you, do you want to (fight or runaway)?")
+        break
+    if response == "runaway":
+        print(
+            "You decided not to fight the mega bat and begin to run, the mega bat swoops in and grabs you by the head. Game Over")
+        game_over()
+    elif response == "fight":
+        floor_5()
+
+
+def floor_5():
+    print(
+        "The bat knocks you out and snatches you away, luckily you manage to drive your sword in its heart causing it to crash and drop you into a new area. \nYou decided to explore the area and see an ancient treasure")
+    response = input("Do you want to open the treasure or move forward?")
+    while True:
+        if response == "open" or response == "move forward":
+            break
+        else:
+            print("You think hard on your decision")
+            response = input("Do you want to open the treasure or move forward? ( type open or move forward) ")
+            break
+    if response == "open":
+        print("You open the treasure chest, a vine grabs on to you and drags you inside the chest.... you died")
+        game_over()
+    if response == "move forward":
+        print(
+            "You decided to explore the area and see a mysterious figure staring at you... \nYou decide to run to the nearest door and shut the door.")
+        floor_6()
+
+
+def enter_blue_room():
+    print(
+        "You entered the blue room you hear something screech, you turn around its a monster whos out for your blood. you begin to run")
+    response = input("Will you run to the left or right?")
+    while True:
+        if response == "left" or response == "right":
+            break
+        else:
+            print("You dont have much time!, you must run either left or right!")
+            response = input("Do you want to open the treasure or move forward? ( type open or move forward) ")
+            break
+    if response == "left":
+        print(
+            "You decided to run left, you run through many rooms but the monster is catching up to you. \nYou jump into a vent and hide from the monster.You continue to move forward and see theres an empty hallway")
+        response = input("Would you like to explore? (yes or no)")
+        if response == "yes":
+            floor_6()
+        if response == "no":
+            print("The monster breaks through the vent and captures you... Game over")
+    if response == "right":
+        print("You run into a dead end, the monster captures you and drags you to a dungeon")
+        print(
+            "You are locked up and cannot escape, you realize you have a knife in your pocket and crave your way through the door.")
+        enter_floor2()
+
+
+def floor_6():
+    print(
+        "You began exploring the area and see writing on the door which says: \nIf you get lost in the middle of nowhere And come across this place in the night, \nthink twice about knocking on their front door Unless you want to get a big fright ")
+    response = input("You now see the door glowing, would you like to open the door?")
+    while True:
+        if response == "yes" or response == "no":
+            break
+        else:
+            print("Listen you have no time right now! select yes or no to proceed, if you want to live.")
+        response = input("You now see the door glowing, would you like to open the door?")
+        break
+    if response == "yes":
+        print(
+            "You open the glowing door and see a huge figure staring at you, he raises his fingers pointing at you. You realize that writing has a meaning."
+            "You knock on the door twice and the figure disappears. You continue to move forward  ")
+        enter_floor7()
+    if response == "no":
+        print(
+            "The monster appears from behind and knocks you out, you wake up couple mins in a small room which is locked."
+            "You search through the entire room and see a small door on the side. You open the door and it teleports you somewhere.")
+        enter_floor7()
 
 
 def floor_3_left():
@@ -138,11 +250,11 @@ def floor_3_left():
         print("You gain an additional 10 Life Points.")
         print("Your life point total is now ", USER_LIFE_POINTS, ".")
         print("You see a ladder leading up to the next floor.")
-        enter_floor4()
+        floor_4()
     elif response == "no":
         print(
             "You ignore the vest, thinking that the extra weight would slow you down. Instead, you see a ladder leading up to the next floor.")
-        enter_floor4()
+        floor_4()
 
 
 def enter_bonus_floor():
@@ -166,10 +278,10 @@ def enter_bonus_floor():
     if response == "forward":
         print("The spiral staircase takes you much farther up into the house than you would have expected."
               "\nYou find yourself on a new floor.")
-        enter_floor5()
+        floor_5()
     if response == "left":
         print("The staircase to your left takes you to an unfamiliar hallway above where you were before.")
-        enter_floor4()
+        floor_4()
 
 
 def floor_3_forward():
